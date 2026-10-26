@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clay & Cane | Pots, baskets and cloth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">Clay<i>&amp;</i>Cane</a>
+  <input id="search" type="search" placeholder="Look for a pot, a basket, a cloth" aria-label="Search products">
+  <button id="cartBtn" class="cart-btn" aria-label="Open cart">Basket <span id="cartCount">0</span></button>
+</header>
+
+<div class="hero">
+  <h1>Pots, baskets and cloth for a fuller shelf.</h1>
+  <p>Made by hand, priced in naira, picked off the wall one piece at a time.</p>
+</div>
+
+<main class="layout">
+  <aside class="filters" aria-label="Filters">
+    <fieldset><legend>Shelf</legend><div id="categories"></div></fieldset>
+    <label>Spend up to <output id="priceOut"></output>
+      <input id="price" type="range" min="2000" max="30000" step="500" value="30000">
+    </label>
+    <label>Arrange by
+      <select id="sort">
+        <option value="featured">As placed</option>
+        <option value="low">Cheapest first</option>
+        <option value="high">Priciest first</option>
+        <option value="name">A to Z</option>
+      </select>
+    </label>
+    <button id="reset" class="link-btn">Clear filters</button>
+  </aside>
+
+  <section>
+    <p id="resultCount" class="count" aria-live="polite"></p>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+
+<div id="overlay" class="overlay" hidden></div>
+<aside id="drawer" class="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer-head"><h2>Your receipt</h2><button id="closeCart" aria-label="Close cart">&times;</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="drawer-foot">
+    <div class="row"><span>Total</span><strong id="subtotal">₦0</strong></div>
+    <button id="checkout" class="primary">Pay now</button>
+    <button id="clear" class="link-btn">Empty basket</button>
+  </div>
+</aside>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
